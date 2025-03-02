@@ -1,0 +1,18 @@
+{
+  "lspconfig": {
+    "intelephense": {
+        "intelephense": {
+          "compatibility": {
+            "preferPsalmPhpstanPrefixedAnnotations": true
+          },
+          "files": {
+            "exclude": [
+              "**/.git/**",
+              "**/node_modules/**",
+              "./vendor/jetbrains/phpstorm-stubs/**"
+            ]
+          }
+        }
+      }
+  }
+}
