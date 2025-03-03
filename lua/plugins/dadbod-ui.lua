@@ -6,6 +6,9 @@ return {
       {
         "kristijanhusak/vim-dadbod-completion",
         ft = { "sql", "mysql", "plsql" },
+        config = function()
+          require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+        end,
       },
     },
     cmd = {
