@@ -51,6 +51,15 @@ return {
               end
             end,
           }),
+          ['<S-Tab>'] = cmp.mapping({
+            i = function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+              else
+                fallback()
+              end
+            end,
+          }),
           ['<CR>'] = cmp.mapping({
             i = function (fallback)
               if cmp.visible() and cmp.get_active_entry() then
