@@ -6,6 +6,26 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      {
+        'tzachar/cmp-tabnine',
+        build = './install.sh',
+        config = function()
+          local tabnine = require('cmp_tabnine.config')
+
+          tabnine:setup({
+            max_lines = 1000,
+            max_num_results = 20,
+            sort = true,
+            run_on_every_keystroke = true,
+            snippet_placeholder = '..',
+            ignored_file_types = {
+              "TelescopePrompt", "NvimTree",
+            },
+            show_prediction_strength = false,
+            min_percent = 0
+          })
+        end
+      }
     },
     config = function()
       local cmp = require('cmp')
@@ -33,6 +53,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'cmp_tabnine' },
         }, {
           { name = 'buffer' },
         })
