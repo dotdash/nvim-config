@@ -2,6 +2,8 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = {
     {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       "folke/neoconf.nvim",
       config = function()
         require("neoconf").setup({
@@ -10,6 +12,10 @@ return {
     }
   },
   config = function()
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+      ensure_installed = { "intelephense" },
+    })
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require("lspconfig")
     lspconfig.intelephense.setup {
