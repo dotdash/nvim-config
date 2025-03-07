@@ -32,6 +32,11 @@ return {
 
       cmp.setup({
         preselect = cmp.PreselectMode.None,
+        confirmation = {
+          get_commit_characters = function(commit_characters)
+            return {'.', ':'}
+          end,
+        },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
