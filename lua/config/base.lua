@@ -33,5 +33,15 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 vim.notify = function(msg, level, opts)
-  vim.system({'notify-send', '-e', '-i', '/usr/share/icons/hicolor/128x128/apps/nvim.png', '--', 'vim', msg})
+  local args = { 'notify-send', '-e', '-i', '/usr/share/icons/hicolor/128x128/apps/nvim.png', '--' }
+
+  local s, e = msg:find('\n')
+  if s == nil then
+    table.insert(args, msg)
+  else
+    table.insert(args, msg:sub(1, s - 1))
+    table.insert(args, msg:sub(e + 1, -1))
+  end
+
+  vim.system(args)
 end
