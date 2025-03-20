@@ -31,3 +31,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts.border = opts.border or "rounded"
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
+
+vim.notify = function(msg, level, opts)
+  vim.system({'notify-send', '-e', '-i', '/usr/share/icons/hicolor/128x128/apps/nvim.png', '--', 'vim', msg})
+end
