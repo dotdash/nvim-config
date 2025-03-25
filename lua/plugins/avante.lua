@@ -53,6 +53,7 @@ return {
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {
         file_types = { "markdown", "Avante" },
+        html = { comment = { conceal = false } },
       },
       ft = { "markdown", "Avante" },
     },
