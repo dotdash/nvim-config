@@ -4,11 +4,13 @@ return {
     {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "folke/neoconf.nvim",
-      config = function()
-        require("neoconf").setup({
-        })
-      end,
+      {
+        "folke/neoconf.nvim",
+        config = function()
+          require("neoconf").setup({
+          })
+        end,
+      }
     }
   },
   config = function()
