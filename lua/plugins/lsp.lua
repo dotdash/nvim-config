@@ -29,6 +29,9 @@ return {
     lspconfig.intelephense.setup {
       capabilities = capabilities,
     }
+    lspconfig.basedpyright.setup {
+      capabilities = capabilities,
+    }
 
     lspconfig.rust_analyzer.setup{
       capabilities = capabilities,
