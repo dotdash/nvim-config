@@ -6,6 +6,7 @@ return {
       options = {
         theme = 'tokyonight',
       },
+      extensions = { 'avante' },
       sections = {
         lualine_c = {
           { 'filename', path = 1 },
